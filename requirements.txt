@@ -1,0 +1,11 @@
+chromadb==0.4.24
+sentence-transformers==2.5.1
+requests==2.31.0
+pandas==2.2.1
+kaggle==1.6.14
+python-dotenv==1.0.1
+schedule==1.2.1
+loguru==0.7.2
+fastapi==0.110.0
+uvicorn==0.29.0
+pydantic==2.6.4

@@ -1,0 +1,28 @@
+# Environment configurations
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# Databases & local storage
+chroma_db/
+history.db
+
+# Frontend / Node
+node_modules/
+dist/
+dist-ssr/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / Misc
+.DS_Store
+.vscode/
