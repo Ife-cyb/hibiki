@@ -1,0 +1,5 @@
+backend/
+pipeline/
+requirements.txt
+*.py
+__pycache__/
