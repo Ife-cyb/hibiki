@@ -65,7 +65,11 @@ def check_rate_limit(ip: str):
     
     rate_tracker[ip].append(now)
 
-@router.post("/api/search", response_model=SearchResponse, tags=["Search"])
+@router.options("/search", tags=["Search"])
+async def search_options():
+    return {}
+
+@router.post("/search", response_model=SearchResponse, tags=["Search"])
 async def perform_search(request: Request, body: SearchRequest):
     """
     **Semantic Anime Search Endpoint**

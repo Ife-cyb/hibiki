@@ -55,9 +55,9 @@ origins = [origin.strip() for origin in cors_origins_str.split(",") if origin.st
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins if origins else [],
+    allow_origins=origins if origins else ["*"], # Fallback to all for local dev if not set
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -77,7 +77,7 @@ async def add_security_headers(request: Request, call_next):
     return response
 
 # Register routers 
-app.include_router(search_router)
+app.include_router(search_router, prefix="/api")
 app.include_router(anime_router)
 app.include_router(health_router)
 app.include_router(history_router)
